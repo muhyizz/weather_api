@@ -19,13 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
 async function importData(API_KEY, location) {
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&aqi=no&days=3`,
+      `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&aqi=no&days=3`,
       {
         mode: "cors",
       }
     );
     const calledOut = await response.json();
-    console.log(calledOut);
     if (!response.ok) {
       console.log(
         `Error Fetching Data ${response.statusText} code ${response.status}`
